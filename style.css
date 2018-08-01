@@ -1,0 +1,60 @@
+body {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#outgoing {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+#incoming {
+  width: 100%;
+}
+
+#generate {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 0.25em;
+  float: right;
+  color: #333;
+}
+
+textarea {
+  padding: 0.5em;
+}
+
+button {
+  padding: 0.5em;
+  background: none;
+  border: 1px solid silver;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0.25em;
+}
+
+#spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #333;
+  border-top: 4px solid white;
+  border-radius: 50%;
+  
+  transition-property: transform;
+  animation-name: rotate; 
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
