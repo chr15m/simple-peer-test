@@ -49,7 +49,7 @@ button {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 
-  display: block;
+  display: none;
   margin-left: auto;
   margin-right: auto;
 }

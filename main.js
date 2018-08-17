@@ -2,6 +2,12 @@
 var Peer = window.SimplePeer
 var p = new Peer({ initiator: location.hash === '#1', trickle: false })
 var out = document.querySelector('#outgoing');
+var spinner = document.querySelector("#spinner");
+
+if (location.hash === '#1') {
+  spinner.style.display = "block";
+  document.getElementById("generate").style.display = "none";
+}
 
 p.on('error', function (err) { console.log('error', err) })
 
@@ -11,6 +17,7 @@ p.on('signal', function (data) {
 })
 
 document.querySelector('form').addEventListener('submit', function (ev) {
+  spinner.style.display = "block";
   ev.preventDefault()
   p.signal(JSON.parse(document.querySelector('#incoming').value))
 })
