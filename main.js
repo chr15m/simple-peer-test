@@ -1,6 +1,6 @@
 // var Peer = require('simple-peer')
 var Peer = window.SimplePeer
-var p = new Peer({ initiator: location.search === '?generate', trickle: false })
+var p = new Peer({ initiator: location.search === '?generate', trickle: true })
 var out = document.querySelector('#outgoing');
 var spinner = document.querySelector("#spinner");
 
@@ -13,7 +13,9 @@ p.on('error', function (err) { console.log('error', err) })
 
 p.on('signal', function (data) {
   console.log('SIGNAL', JSON.stringify(data))
-  out.textContent = JSON.stringify(data) + "\n"
+  if (data.type == "offer" || data.type == "answer") {
+    out.textContent = JSON.stringify(data) + "\n"
+  }
 })
 
 document.querySelector('form').addEventListener('submit', function (ev) {
