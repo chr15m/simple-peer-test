@@ -1,10 +1,10 @@
 // var Peer = require('simple-peer')
 var Peer = window.SimplePeer
-var p = new Peer({ initiator: location.hash === '#1', trickle: false })
+var p = new Peer({ initiator: location.search === '?generate', trickle: false })
 var out = document.querySelector('#outgoing');
 var spinner = document.querySelector("#spinner");
 
-if (location.hash === '#1') {
+if (location.search === '?generate') {
   spinner.style.display = "block";
   document.getElementById("generate").style.display = "none";
 }
