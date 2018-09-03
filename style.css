@@ -13,11 +13,11 @@ body {
   width: 100%;
 }
 
-#generate {
+a {
   text-decoration: none;
   font-family: sans-serif;
   font-weight: bold;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
   float: right;
   color: #333;
 }
